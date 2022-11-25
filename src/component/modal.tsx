@@ -21,6 +21,8 @@ const Modal = (props: Props) => {
     setIsModalOpen(setting.open);
   }, [setting.open]);
 
+  if (!setting.open) return <></>;
+
   return (
     <>
       <div
