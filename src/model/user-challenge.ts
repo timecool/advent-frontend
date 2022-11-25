@@ -1,8 +1,8 @@
-import { IChallenge } from "./challenge";
+import type { IChallenge } from './challenge';
 
 export interface IUserChallenge {
-  id:        number;
-  filePath:  string;
+  id: number;
+  filePath: string;
   challenge: IChallenge;
-  checked:   boolean;
+  checked: boolean;
 }

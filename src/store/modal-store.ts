@@ -1,7 +1,7 @@
 import create from 'zustand';
 
 interface ModalState {
-  isModalOpen: boolean
+  isModalOpen: boolean;
   setIsModalOpen: (isModalOpen: boolean) => void;
 }
 

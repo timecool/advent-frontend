@@ -1,13 +1,18 @@
-import { IChallenge } from "@/model/challenge"
-import axios, {AxiosResponse} from "axios"
-import { createHeader } from "./header"
+import type { AxiosResponse } from 'axios';
+import axios from 'axios';
 
-export const getChallenges = async() => {
+import type { IChallenge } from '@/model/challenge';
 
-  const response: AxiosResponse<IChallenge[]> = await axios.get("http://localhost:8080/api/noauth/challenges",createHeader())
+import { createHeader } from './header';
 
-  if(response.status === 200) {
-    return response.data
+export const getChallenges = async () => {
+  const response: AxiosResponse<IChallenge[]> = await axios.get(
+    'http://localhost:8080/api/noauth/challenges',
+    createHeader()
+  );
+
+  if (response.status === 200) {
+    return response.data;
   }
-  return [] 
-}
+  return [];
+};

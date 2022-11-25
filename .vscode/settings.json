@@ -11,7 +11,7 @@
     "source.fixAll.eslint"
   ],
   // Multiple language settings for json and jsonc files
-  "[json][jsonc]": {
+  "[json][jsonc][ts][tsx]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
