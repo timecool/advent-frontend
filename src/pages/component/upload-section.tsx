@@ -1,6 +1,6 @@
 import { IUserChallenge } from '@/model/user-challenge';
 import UserStore from '@/store/user-store';
-import { last, map } from 'lodash';
+import last from 'lodash/last';
 import Login from './login';
 import Register from './register';
 import Upload from './upload';
