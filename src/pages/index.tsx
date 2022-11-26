@@ -1,6 +1,7 @@
 import map from 'lodash/map';
 import range from 'lodash/range';
 import moment from 'moment';
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Snowfall from 'react-snowfall';
 
@@ -31,6 +32,9 @@ const Index = () => {
   const doors = range(24);
   return (
     <div className="overflow-hidden">
+      <Head>
+        <title>byte5 Adventskalender</title>
+      </Head>
       <div
         className={`flex h-screen items-center justify-center`}
         style={{ background: '#1a3a55' }}
