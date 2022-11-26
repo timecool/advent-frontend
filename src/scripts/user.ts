@@ -14,7 +14,7 @@ export const isAuth = async () => {
   }
 
   const response = await axios.post(
-    'https://advent-backend.herokuapp.com/api/user/auth',
+    `${process.env.NEXT_PUBLIC_API_URL}/api/user/auth`,
     {},
     createHeader()
   );
@@ -32,7 +32,7 @@ export const login = async (username: string, password: string) => {
   const { setToken } = UserPersistStore.getState();
   try {
     const response = await axios.post(
-      'https://advent-backend.herokuapp.com/api/noauth/login',
+      `${process.env.NEXT_PUBLIC_API_URL}/api/noauth/login`,
       { username, password }
     );
 
@@ -54,8 +54,12 @@ export const register = async (
   const { setToken } = UserPersistStore.getState();
   try {
     const response = await axios.post(
-      'https://advent-backend.herokuapp.com/api/noauth/register',
-      { username, password, email }
+      `${process.env.NEXT_PUBLIC_API_URL}/api/noauth/register`,
+      {
+        username,
+        password,
+        email,
+      }
     );
     if (response.status === 200) {
       setToken(response.data.accessToken);
@@ -80,7 +84,7 @@ export const challenges = async (id: number, file: any) => {
       'Content-Type': 'multipart/form-data',
     };
     const response = await axios.post(
-      `https://advent-backend.herokuapp.com/api/challenges/user/${id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/challenges/user/${id}`,
       formData,
       {
         headers,

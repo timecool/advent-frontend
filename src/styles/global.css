@@ -39,6 +39,7 @@ color:white;
   transform-origin: bottom left;
   opacity: 1;
   transition: all 0.5s ease-in-out;
+  z-index:2
 }
 
 .item:hover .door, .item:focus .door {
@@ -58,6 +59,7 @@ color:white;
   justify-content: flex-end;
   perspective: 0;
   transform-origin: bottom left;
+  z-index:3
 }
 
 .shadow {

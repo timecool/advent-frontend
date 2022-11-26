@@ -39,7 +39,7 @@ const Index = () => {
         className={`flex h-screen items-center justify-center`}
         style={{ background: '#1a3a55' }}
       >
-        <div className="no-scrollbar grid h-screen  items-center justify-center gap-2 overflow-y-auto overflow-x-hidden py-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="no-scrollbar grid h-screen w-full items-center justify-center gap-2 overflow-y-auto overflow-x-hidden px-12 py-3 sm:w-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6">
           {map(doors, (door) => (
             <Door
               key={door}
