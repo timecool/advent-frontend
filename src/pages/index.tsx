@@ -2,6 +2,7 @@ import map from 'lodash/map';
 import range from 'lodash/range';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import Snowfall from 'react-snowfall';
 
 import Door from '@/component/door';
 import type { IChallenge } from '@/model/challenge';
@@ -44,6 +45,7 @@ const Index = () => {
           ))}
         </div>
       </div>
+      <Snowfall />
     </div>
   );
 };
