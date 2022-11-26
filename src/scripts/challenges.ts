@@ -7,7 +7,7 @@ import { createHeader } from './header';
 
 export const getChallenges = async () => {
   const response: AxiosResponse<IChallenge[]> = await axios.get(
-    'http://localhost:8080/api/noauth/challenges',
+    'https://advent-backend.herokuapp.com/api/noauth/challenges',
     createHeader()
   );
 

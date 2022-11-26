@@ -14,7 +14,7 @@ export const isAuth = async () => {
   }
 
   const response = await axios.post(
-    'http://localhost:8080/api/user/auth',
+    'https://advent-backend.herokuapp.com/api/user/auth',
     {},
     createHeader()
   );
@@ -32,7 +32,7 @@ export const login = async (username: string, password: string) => {
   const { setToken } = UserPersistStore.getState();
   try {
     const response = await axios.post(
-      'http://localhost:8080/api/noauth/login',
+      'https://advent-backend.herokuapp.com/api/noauth/login',
       { username, password }
     );
 
@@ -54,7 +54,7 @@ export const register = async (
   const { setToken } = UserPersistStore.getState();
   try {
     const response = await axios.post(
-      'http://localhost:8080/api/noauth/register',
+      'https://advent-backend.herokuapp.com/api/noauth/register',
       { username, password, email }
     );
     if (response.status === 200) {
@@ -80,7 +80,7 @@ export const challenges = async (id: number, file: any) => {
       'Content-Type': 'multipart/form-data',
     };
     const response = await axios.post(
-      `http://localhost:8080/api/challenges/user/${id}`,
+      `https://advent-backend.herokuapp.com/api/challenges/user/${id}`,
       formData,
       {
         headers,
