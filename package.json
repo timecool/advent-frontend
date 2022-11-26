@@ -16,6 +16,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.0.4",
     "axios": "^1.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -34,7 +35,6 @@
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@commitlint/cz-commitlint": "^17.2.0",
-    "@next/bundle-analyzer": "^13.0.4",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@testing-library/jest-dom": "^5.16.5",
