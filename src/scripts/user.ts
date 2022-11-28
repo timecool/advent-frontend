@@ -25,6 +25,7 @@ export const isAuth = async () => {
     setIsAuth(true);
     return;
   }
+  setToken(undefined);
   setIsAuth(false);
 };
 
@@ -99,4 +100,24 @@ export const challenges = async (id: number, file: any) => {
   }
 
   return 'Something went wrong';
+};
+
+export const getUsers = async () => {
+  try {
+    const headers = {
+      ...createHeader().headers,
+    };
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/admin/users`,
+      {
+        headers,
+      }
+    );
+    if (response.status === 200) {
+      return response.data;
+    }
+  } catch (error: any) {
+    return undefined;
+  }
+  return undefined;
 };
