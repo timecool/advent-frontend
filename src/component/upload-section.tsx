@@ -28,7 +28,7 @@ const UploadSection = (props: Props) => {
       {lastUpload ? (
         <div className="flex w-full  gap-3">
           <div
-            className="w-4/6 border border-dashed p-2"
+            className="border border-dashed p-2 "
             style={{ borderColor: '#1177ab' }}
           >
             {lastUpload.filePath} /{' '}

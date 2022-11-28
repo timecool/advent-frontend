@@ -10,20 +10,23 @@ interface Props {
 
 const Upload = (props: Props) => {
   const { id } = props;
+  const [load, setLoad] = useState<boolean>(false);
   const [uploadFile, setUploadFile] = useState<File | null>();
   const handleChange = (file: File | null) => {
     setUploadFile(file);
   };
 
-  const submit = () => {
+  const submit = async () => {
     if (uploadFile) {
-      challenges(id, uploadFile);
+      setLoad(true);
+      await challenges(id, uploadFile);
+      setLoad(false);
     }
   };
   return (
-    <div className=" lg:flex-cols flex-rows flex gap-3">
+    <div className="flex flex-col gap-3 lg:flex-row">
       <div
-        className="w-4/6 border border-dashed p-2"
+        className="w-full border border-dashed p-2 lg:w-4/6"
         style={{ borderColor: '#1177ab' }}
       >
         <FileUploader handleChange={handleChange} name="file">
@@ -52,12 +55,12 @@ const Upload = (props: Props) => {
         </FileUploader>
       </div>
       <button
-        disabled={!uploadFile}
-        className="px-16 py-3 font-bold "
+        disabled={!uploadFile || load}
+        className="px-16 py-3 font-bold"
         style={{ background: '#1177ab' }}
         onClick={submit}
       >
-        Abschicken
+        {load ? 'Upload...' : 'Abschicken'}
       </button>
     </div>
   );
