@@ -1,6 +1,5 @@
 import map from 'lodash/map';
 import range from 'lodash/range';
-import moment from 'moment';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Snowfall from 'react-snowfall';
@@ -22,11 +21,7 @@ const Index = () => {
   }, [token]);
 
   const getChallengeByDate = (door: number) => {
-    return challenges.find(
-      (c) =>
-        moment(c.day).format('YYYY-MM-DD') ===
-        moment(`2022-12-${door}`).format('YYYY-MM-DD')
-    );
+    return challenges.find((c) => c.id === door);
   };
 
   const doors = range(24);
