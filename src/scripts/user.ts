@@ -13,20 +13,24 @@ export const isAuth = async () => {
     return;
   }
 
-  const response = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/user/auth`,
-    {},
-    createHeader()
-  );
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/user/auth`,
+      {},
+      createHeader()
+    );
 
-  if (response.status === 200) {
-    setToken(response.data.accessToken);
-    setUserChallenges(response.data.challenges);
-    setIsAuth(true);
-    return;
+    if (response.status === 200) {
+      setToken(response.data.accessToken);
+      setUserChallenges(response.data.challenges);
+      setIsAuth(true);
+      return;
+    }
+  } catch (error: any) {
+    setToken(undefined);
+    setIsAuth(false);
+    window.location.reload();
   }
-  setToken(undefined);
-  setIsAuth(false);
 };
 
 export const login = async (username: string, password: string) => {
