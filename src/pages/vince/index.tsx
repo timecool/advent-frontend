@@ -23,7 +23,7 @@ const Index = () => {
         <title>byte5 Adventskalender</title>
       </Head>
       <div className={`flex h-screen `} style={{ background: '#1a3a55' }}>
-        <div className="no-scrollbar grid h-screen w-full gap-2 overflow-y-auto overflow-x-hidden px-12 py-3 sm:w-auto">
+        <div className="no-scrollbar px-12 py-3">
           {map(users, (user) => (
             <User user={user} key={user.id} />
           ))}
